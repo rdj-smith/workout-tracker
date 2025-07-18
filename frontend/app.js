@@ -1,24 +1,22 @@
-const apiUrl = "https://your-api-id.execute-api.us-east-1.amazonaws.com/logs"; // Replace after deploy
+// const apiUrl = "https://your-api-id.execute-api.us-east-1.amazonaws.com/logs"; // Replace after deploy
 
-document.getElementById("logForm").addEventListener("submit", async function (e) {
-  e.preventDefault();
-  const exercise = document.getElementById("exercise").value;
-  const reps = document.getElementById("reps").value;
-  const weight = document.getElementById("weight").value;
-  const today = new Date().toISOString().split("T")[0];
+document.addEventListener("DOMContentLoaded", () => {
+  const today = new Date().toLocaleString('en-US', { weekday: 'long' }).toLowerCase();
+  const container = document.getElementById('workout-list');
 
-  const response = await fetch(apiUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      user_id: "default_user",
-      date: today,
-      exercise,
-      reps,
-      weight,
+  fetch('workouts.json')
+    .then(response => response.json())
+    .then(data => {
+      const exercises = data[today] || [];
+      if (exercises.length > 0) {
+        container.innerHTML = `<h2>${today.toUpperCase()} WORKOUT</h2><ul>` +
+          exercises.map(ex => `<li>${ex}</li>`).join('') + '</ul>';
+      } else {
+        container.innerHTML = `<p>No workout assigned for today (${today}).</p>`;
+      }
     })
-  });
-
-  const data = await response.json();
-  document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+    .catch(err => {
+      console.error("Failed to load workouts.json:", err);
+      container.innerHTML = `<p>Error loading workouts.</p>`;
+    });
 });
