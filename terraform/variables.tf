@@ -3,5 +3,5 @@ variable "aws_region" {
 }
 
 variable "bucket_name" {
-  default = "my-workout-tracker-app"
+  default = "stupid-workout-tracker-app"
 }
