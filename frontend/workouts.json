@@ -1,0 +1,30 @@
+
+[
+  [
+    { "id": "bench", "name": "Dumbbell Bench Press" },
+    { "id": "fly", "name": "Dumbbell Fly" }
+  ],
+  [
+    { "id": "squat", "name": "Goblet Squat" },
+    { "id": "lunge", "name": "Walking Lunges" }
+  ],
+  [
+    { "id": "row", "name": "One Arm Dumbbell Row" },
+    { "id": "shrug", "name": "Dumbbell Shrug" }
+  ],
+  [
+    { "id": "curl", "name": "Alternating Dumbbell Curl" },
+    { "id": "hammer", "name": "Hammer Curl" }
+  ],
+  [
+    { "id": "press", "name": "Dumbbell Shoulder Press" },
+    { "id": "lateral", "name": "Lateral Raise" }
+  ],
+  [
+    { "id": "deadlift", "name": "Romanian Deadlift" },
+    { "id": "calf", "name": "Calf Raises" }
+  ],
+  [
+    { "id": "rest", "name": "Rest Day" }
+  ]
+]
