@@ -2,11 +2,31 @@ provider "aws" {
   region = var.aws_region
 }
 
+variable "aws_region" {
+  default = "us-east-1"
+}
+
+variable "bucket_name" {
+  default = "stupid-workout-tracker-app"
+}
+
+variable "acm_certificate_arn" {
+  type    = string
+  default = "arn:aws:acm:us-east-1:774874928453:certificate/07dd439d-3eeb-4b76-9cad-86f99c2a3c51"
+}
+
+variable "custom_domain" {
+  type    = string
+  default = "workout.deltalinks.com"
+}
+
 resource "aws_s3_bucket" "frontend" {
   bucket = var.bucket_name
+
   website {
     index_document = "index.html"
   }
+
   tags = {
     Name = "WorkoutTrackerFrontend"
   }
@@ -38,17 +58,21 @@ resource "aws_s3_bucket_policy" "frontend_policy" {
 resource "aws_dynamodb_table" "tracker" {
   name         = "WorkoutLogs"
   billing_mode = "PAY_PER_REQUEST"
-  hash_key     = "user_id"
-  range_key    = "date_exercise"
+  hash_key     = "user_name"
+  range_key    = "date"
 
   attribute {
-    name = "user_id"
+    name = "user_name"
     type = "S"
   }
 
   attribute {
-    name = "date_exercise"
+    name = "date"
     type = "S"
+  }
+
+  tags = {
+    Name = "WorkoutLogs"
   }
 }
 
@@ -65,6 +89,20 @@ resource "aws_iam_role" "lambda_exec" {
       }
     }]
   })
+
+  inline_policy {
+    name = "DynamoWriteAccess"
+    policy = jsonencode({
+      Version = "2012-10-17",
+      Statement = [
+        {
+          Effect   = "Allow",
+          Action   = ["dynamodb:PutItem"],
+          Resource = aws_dynamodb_table.tracker.arn
+        }
+      ]
+    })
+  }
 }
 
 resource "aws_iam_policy_attachment" "lambda_policy" {
@@ -110,24 +148,6 @@ resource "aws_apigatewayv2_stage" "default" {
   api_id      = aws_apigatewayv2_api.http_api.id
   name        = "$default"
   auto_deploy = true
-}
-
-output "s3_website_url" {
-  value = aws_s3_bucket.frontend.website_endpoint
-}
-
-output "api_url" {
-  value = aws_apigatewayv2_api.http_api.api_endpoint
-}
-
-variable "acm_certificate_arn" {
-  type    = string
-  default = "arn:aws:acm:us-east-1:774874928453:certificate/07dd439d-3eeb-4b76-9cad-86f99c2a3c51"
-}
-
-variable "custom_domain" {
-  type    = string
-  default = "workout.deltalinks.com"
 }
 
 resource "aws_cloudfront_origin_access_identity" "s3_oai" {}
@@ -183,6 +203,14 @@ resource "aws_cloudfront_distribution" "frontend" {
   tags = {
     Name = "WorkoutTrackerFrontendCDN"
   }
+}
+
+output "s3_website_url" {
+  value = aws_s3_bucket.frontend.website_endpoint
+}
+
+output "api_url" {
+  value = aws_apigatewayv2_api.http_api.api_endpoint
 }
 
 output "cloudfront_url" {

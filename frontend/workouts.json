@@ -1,48 +1,48 @@
 {
   "monday": [
-    "Dumbbell Flat Bench Press — 4x8-12 (start 30 lbs)",
-    "Dumbbell Incline Press — 3x10-12 (start 30 lbs)",
-    "Dumbbell Shoulder Press — 4x8-10 (start 25 lbs)",
-    "Dumbbell Lateral Raises — 3x12-15 (start 10-15 lbs)",
-    "Overhead Triceps Extension — 3x10-12 (start 20 lbs)"
+    { "id": "flat-bench", "name": "Dumbbell Flat Bench Press", "sets": "4x8-12", "suggested_weight": "30 lbs" },
+    { "id": "incline-press", "name": "Dumbbell Incline Press", "sets": "3x10-12", "suggested_weight": "30 lbs" },
+    { "id": "shoulder-press", "name": "Dumbbell Shoulder Press", "sets": "4x8-10", "suggested_weight": "25 lbs" },
+    { "id": "lateral-raises", "name": "Dumbbell Lateral Raises", "sets": "3x12-15", "suggested_weight": "10-15 lbs" },
+    { "id": "triceps-extension", "name": "Overhead Triceps Extension", "sets": "3x10-12", "suggested_weight": "20 lbs" }
   ],
   "tuesday": [
-    "Goblet Squat — 4x8-12 (start 40 lbs)",
-    "Dumbbell RDL — 4x10-12 (start 35 lbs)",
-    "Reverse Lunge — 3x8-10/leg (start 25 lbs)",
-    "Glute Bridges — 3x12-15 (40 lbs dumbbell on hips)",
-    "Standing Calf Raises — 3x20 (start 30 lbs)"
+    { "id": "goblet-squat", "name": "Goblet Squat", "sets": "4x8-12", "suggested_weight": "40 lbs" },
+    { "id": "dumbbell-rdl", "name": "Dumbbell RDL", "sets": "4x10-12", "suggested_weight": "35 lbs" },
+    { "id": "reverse-lunge", "name": "Reverse Lunge", "sets": "3x8-10/leg", "suggested_weight": "25 lbs" },
+    { "id": "glute-bridges", "name": "Glute Bridges", "sets": "3x12-15", "suggested_weight": "40 lbs" },
+    { "id": "calf-raises", "name": "Standing Calf Raises", "sets": "3x20", "suggested_weight": "30 lbs" }
   ],
   "wednesday": [
-    "Bent Over Row — 4x8-12 (start 30 lbs)",
-    "Single Arm Row — 3x10/arm (start 35 lbs)",
-    "Renegade Row — 3x10/arm (start 25 lbs)",
-    "Rear Delt Fly — 3x12-15 (start 15 lbs)",
-    "Bicep Curls — 3x10-12 (start 20 lbs)"
+    { "id": "bent-over-row", "name": "Bent Over Row", "sets": "4x8-12", "suggested_weight": "30 lbs" },
+    { "id": "single-arm-row", "name": "Single Arm Row", "sets": "3x10/arm", "suggested_weight": "35 lbs" },
+    { "id": "renegade-row", "name": "Renegade Row", "sets": "3x10/arm", "suggested_weight": "25 lbs" },
+    { "id": "rear-delt-fly", "name": "Rear Delt Fly", "sets": "3x12-15", "suggested_weight": "15 lbs" },
+    { "id": "bicep-curls", "name": "Bicep Curls", "sets": "3x10-12", "suggested_weight": "20 lbs" }
   ],
   "thursday": [
-    "60 Pushups",
-    "50 Sidebends",
-    "100 Crunches",
-    "100 Leg Lifts"
+    { "id": "pushups", "name": "Pushups", "sets": "1x60", "suggested_weight": "Bodyweight" },
+    { "id": "sidebends", "name": "Sidebends", "sets": "1x50", "suggested_weight": "Bodyweight" },
+    { "id": "crunches", "name": "Crunches", "sets": "1x100", "suggested_weight": "Bodyweight" },
+    { "id": "leg-lifts", "name": "Leg Lifts", "sets": "1x100", "suggested_weight": "Bodyweight" }
   ],
   "friday": [
-    "Dumbbell Thrusters — 4x10 (start 30 lbs)",
-    "RDL to Row Combo — 3x8-10 (start 30 lbs)",
-    "Lateral Lunges — 3x10/leg (start 25 lbs)",
-    "Dumbbell Push-Ups — 3x15-20 (bodyweight)",
-    "Russian Twists — 3x20 (start 20 lbs)"
+    { "id": "thrusters", "name": "Dumbbell Thrusters", "sets": "4x10", "suggested_weight": "30 lbs" },
+    { "id": "rdl-row", "name": "RDL to Row Combo", "sets": "3x8-10", "suggested_weight": "30 lbs" },
+    { "id": "lateral-lunges", "name": "Lateral Lunges", "sets": "3x10/leg", "suggested_weight": "25 lbs" },
+    { "id": "pushups-db", "name": "Dumbbell Push-Ups", "sets": "3x15-20", "suggested_weight": "Bodyweight" },
+    { "id": "russian-twists", "name": "Russian Twists", "sets": "3x20", "suggested_weight": "20 lbs" }
   ],
   "saturday": [
-    "60 Pushups",
-    "50 Sidebends",
-    "100 Crunches",
-    "100 Leg Lifts"
+    { "id": "pushups", "name": "Pushups", "sets": "1x60", "suggested_weight": "Bodyweight" },
+    { "id": "sidebends", "name": "Sidebends", "sets": "1x50", "suggested_weight": "Bodyweight" },
+    { "id": "crunches", "name": "Crunches", "sets": "1x100", "suggested_weight": "Bodyweight" },
+    { "id": "leg-lifts", "name": "Leg Lifts", "sets": "1x100", "suggested_weight": "Bodyweight" }
   ],
   "sunday": [
-    "60 Pushups",
-    "50 Sidebends",
-    "100 Crunches",
-    "100 Leg Lifts"
+    { "id": "pushups", "name": "Pushups", "sets": "1x60", "suggested_weight": "Bodyweight" },
+    { "id": "sidebends", "name": "Sidebends", "sets": "1x50", "suggested_weight": "Bodyweight" },
+    { "id": "crunches", "name": "Crunches", "sets": "1x100", "suggested_weight": "Bodyweight" },
+    { "id": "leg-lifts", "name": "Leg Lifts", "sets": "1x100", "suggested_weight": "Bodyweight" }
   ]
 }

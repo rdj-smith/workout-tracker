@@ -1,31 +1,34 @@
-const AWS = require('aws-sdk');
-const dynamo = new AWS.DynamoDB.DocumentClient();
-const TABLE_NAME = process.env.TABLE_NAME;
+const AWS = require("aws-sdk");
+const dynamodb = new AWS.DynamoDB.DocumentClient();
+
+const TABLE_NAME = process.env.TABLE_NAME || "WorkoutLogs";
 
 exports.handler = async (event) => {
-  const method = event.requestContext.http.method;
-  const body = event.body ? JSON.parse(event.body) : {};
+  try {
+    const body = JSON.parse(event.body);
+    const { user_name, date, day, log } = body;
 
-  if (method === 'POST') {
-    const item = {
-      user_id: body.user_id || "default_user",
-      date_exercise: body.date + "#" + body.exercise,
-      reps: body.reps,
-      weight: body.weight,
-    };
-
-    await dynamo.put({ TableName: TABLE_NAME, Item: item }).promise();
-    return { statusCode: 200, body: JSON.stringify({ message: 'Logged!' }) };
-  } else if (method === 'GET') {
     const params = {
       TableName: TABLE_NAME,
-      KeyConditionExpression: 'user_id = :uid',
-      ExpressionAttributeValues: { ':uid': "default_user" }
+      Item: {
+        user_name,       // Partition key
+        date,            // Sort key (ISO format)
+        day,
+        log              // Array of workout entries
+      }
     };
 
-    const result = await dynamo.query(params).promise();
-    return { statusCode: 200, body: JSON.stringify(result.Items) };
-  }
+    await dynamodb.put(params).promise();
 
-  return { statusCode: 400, body: 'Unsupported method' };
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ message: "Log saved successfully." })
+    };
+  } catch (err) {
+    console.error("Error saving log:", err);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: "Failed to save log." })
+    };
+  }
 };
