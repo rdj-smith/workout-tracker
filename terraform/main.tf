@@ -2,24 +2,6 @@ provider "aws" {
   region = var.aws_region
 }
 
-variable "aws_region" {
-  default = "us-east-1"
-}
-
-variable "bucket_name" {
-  default = "stupid-workout-tracker-app"
-}
-
-variable "acm_certificate_arn" {
-  type    = string
-  default = "arn:aws:acm:us-east-1:774874928453:certificate/07dd439d-3eeb-4b76-9cad-86f99c2a3c51"
-}
-
-variable "custom_domain" {
-  type    = string
-  default = "workout.deltalinks.com"
-}
-
 resource "aws_s3_bucket" "frontend" {
   bucket = var.bucket_name
 
