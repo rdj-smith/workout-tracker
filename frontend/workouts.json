@@ -1,28 +1,28 @@
 {
   "monday": [
-    "Dumbbell Flat Bench Press — 4x8-12 (start 30 lbs)",
-    "Dumbbell Incline Press — 3x10-12 (start 30 lbs)",
-    "Dumbbell Shoulder Press — 4x8-10 (start 25 lbs)",
-    "Dumbbell Lateral Raises — 3x12-15 (start 10-15 lbs)",
-    "Overhead Triceps Extension — 3x10-12 (start 20 lbs)",
+    "Dumbbell Flat Bench Press - 4x8-12 (start 30 lbs)",
+    "Dumbbell Incline Press - 3x10-12 (start 30 lbs)",
+    "Dumbbell Shoulder Press - 4x8-10 (start 25 lbs)",
+    "Dumbbell Lateral Raises - 3x12-15 (start 10-15 lbs)",
+    "Overhead Triceps Extension - 3x10-12 (start 20 lbs)",
     "60 Pushups",
     "50 Sidebends",
     "100 Crunches",
     "100 Leg Lifts"
   ],
   "tuesday": [
-    "Goblet Squat — 4x8-12 (start 40 lbs)",
-    "Dumbbell RDL — 4x10-12 (start 35 lbs)",
-    "Reverse Lunge — 3x8-10/leg (start 25 lbs)",
-    "Glute Bridges — 3x12-15 (40 lbs dumbbell on hips)",
-    "Standing Calf Raises — 3x20 (start 30 lbs)"
+    "Goblet Squat - 4x8-12 (start 40 lbs)",
+    "Dumbbell RDL - 4x10-12 (start 35 lbs)",
+    "Reverse Lunge - 3x8-10/leg (start 25 lbs)",
+    "Glute Bridges - 3x12-15 (40 lbs dumbbell on hips)",
+    "Standing Calf Raises - 3x20 (start 30 lbs)"
   ],
   "wednesday": [
-    "Bent Over Row — 4x8-12 (start 30 lbs)",
-    "Single Arm Row — 3x10/arm (start 35 lbs)",
-    "Renegade Row — 3x10/arm (start 25 lbs)",
-    "Rear Delt Fly — 3x12-15 (start 15 lbs)",
-    "Bicep Curls — 3x10-12 (start 20 lbs)"
+    "Bent Over Row - 4x8-12 (start 30 lbs)",
+    "Single Arm Row - 3x10/arm (start 35 lbs)",
+    "Renegade Row - 3x10/arm (start 25 lbs)",
+    "Rear Delt Fly - 3x12-15 (start 15 lbs)",
+    "Bicep Curls - 3x10-12 (start 20 lbs)"
   ],
   "thursday": [
     { "id": "pushups", "name": "Pushups", "sets": "1x60", "suggested_weight": "Bodyweight" },
@@ -31,11 +31,11 @@
     { "id": "leg-lifts", "name": "Leg Lifts", "sets": "1x100", "suggested_weight": "Bodyweight" }
   ],
   "friday": [
-    "Dumbbell Thrusters — 4x10 (start 30 lbs)",
-    "RDL to Row Combo — 3x8-10 (start 30 lbs)",
-    "Lateral Lunges — 3x10/leg (start 25 lbs)",
-    "Dumbbell Push-Ups — 3x15-20 (bodyweight)",
-    "Russian Twists — 3x20 (start 20 lbs)"
+    "Dumbbell Thrusters - 4x10 (start 30 lbs)",
+    "RDL to Row Combo - 3x8-10 (start 30 lbs)",
+    "Lateral Lunges - 3x10/leg (start 25 lbs)",
+    "Dumbbell Push-Ups - 3x15-20 (bodyweight)",
+    "Russian Twists - 3x20 (start 20 lbs)"
   ],
   "saturday": [
     { "id": "pushups", "name": "Pushups", "sets": "1x60", "suggested_weight": "Bodyweight" },
